@@ -25,7 +25,7 @@ void MemSet32(long *dst, long value, size_t size)
    for(size>>=5; size; size--) {
        // Use movca.l for the first write with pre-decrement
        void *pdst = --dst;
-       __asm__ __volatile __(
+       __asm__ __volatile__(
            "movca.l %[data], @%[out]\n"
            : // no outputs
            : [data] "z" (lv), [out] "r" (pdst)
