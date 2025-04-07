@@ -13,7 +13,7 @@ A collection of highly optimized assembly and C routines specifically designed f
 ## 🚀 Features
 
 - **Store Queue (SQ) Optimized Memory Transfers** - Ultra-fast memory copies that utilize the SH4's dedicated Store Queue hardware
-
+- **movca.l instruction for optimized cache handling** - Uses pre-decrement addressing mode which is faster on SH4 
 
 ## 🔧 Technical Details
 
