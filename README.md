@@ -31,11 +31,6 @@ These routines take advantage of specific SH4 processor features:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-optimization`)
-3. Commit your changes (`git commit -m 'Add some amazing optimization'`)
-4. Push to the branch (`git push origin feature/amazing-optimization`)
-5. Open a Pull Request
 
 ## 📄 License
 
