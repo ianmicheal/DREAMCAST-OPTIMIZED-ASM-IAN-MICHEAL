@@ -12,10 +12,10 @@
  * 5. Features an unrolled inner loop to reduce branch penalties
  * 6. IMPORTANT: Uses prefetch only ONCE per cache line!
  */
-void MemCpy32(long *src, long *dst, size_t size)
+void MemCpy32(uint32_t *dst, uint32_t *src, size_t size)
 {
-    // Create a second source pointer offset by 8 bytes (2 longs)
-    long *src2;
+    // Create a second source pointer offset by 8 items
+    uint32_t *src2;
     src2 = src+8;
     
     // Process in 32-byte chunks (8 longs per chunk)
