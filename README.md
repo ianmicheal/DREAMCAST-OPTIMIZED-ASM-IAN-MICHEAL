@@ -1,4 +1,30 @@
 # 🎮 DreamCast SH4 Optimized Routines
+# Benchmark
+OUTPUT:> BUFFER SIZE: 0
+OUTPUT:> 	memcpy         :       1030
+OUTPUT:> 	memcpy_fast    :       1100
+OUTPUT:> 	MemCpy32       :        665
+OUTPUT:> BUFFER SIZE: 32
+OUTPUT:> 	memcpy         :       1435
+OUTPUT:> 	memcpy_fast    :        995
+OUTPUT:> 	MemCpy32       :        805
+OUTPUT:> BUFFER SIZE: 64
+OUTPUT:> 	memcpy         :       1485
+OUTPUT:> 	memcpy_fast    :       1725
+OUTPUT:> 	MemCpy32       :        905
+OUTPUT:> BUFFER SIZE: 96
+OUTPUT:> 	memcpy         :       1645
+OUTPUT:> 	memcpy_fast    :       1785
+OUTPUT:> 	MemCpy32       :       1005
+OUTPUT:> BUFFER SIZE: 128
+OUTPUT:> 	memcpy         :       1805
+OUTPUT:> 	memcpy_fast    :       1845
+OUTPUT:> 	MemCpy32       :       1105
+OUTPUT:> BUFFER SIZE: 1024
+OUTPUT:> 	memcpy         :       6315
+OUTPUT:> 	memcpy_fast    :       3650
+OUTPUT:> 	MemCpy32       :       3905
+
 
 ![Dreamcast Logo](https://raw.githubusercontent.com/dreamcast-scene/resources/main/dreamcast_logo.png)
 
