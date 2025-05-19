@@ -1,4 +1,5 @@
 # 🎮 SH4-Optimized Memory Copy ⚡🧠🔧
+
 - **Cache Line Optimization**: Functions process memory in 32-byte chunks to match the SH4's cache line size
 - **Prefetch Instructions**: Strategic placement of `pref` instructions exactly one cache line ahead
 - **Write Allocation**: Using `movca.l` to optimize cache line allocation for write operations
