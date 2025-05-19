@@ -1,29 +1,23 @@
-# 🎮 DreamCast SH4 Optimized Routines
-# Benchmark
-OUTPUT:> BUFFER SIZE: 0
-OUTPUT:> 	memcpy         :       1030
-OUTPUT:> 	memcpy_fast    :       1100
-OUTPUT:> 	MemCpy32       :        665
-OUTPUT:> BUFFER SIZE: 32
-OUTPUT:> 	memcpy         :       1435
-OUTPUT:> 	memcpy_fast    :        995
-OUTPUT:> 	MemCpy32       :        805
-OUTPUT:> BUFFER SIZE: 64
-OUTPUT:> 	memcpy         :       1485
-OUTPUT:> 	memcpy_fast    :       1725
-OUTPUT:> 	MemCpy32       :        905
-OUTPUT:> BUFFER SIZE: 96
-OUTPUT:> 	memcpy         :       1645
-OUTPUT:> 	memcpy_fast    :       1785
-OUTPUT:> 	MemCpy32       :       1005
-OUTPUT:> BUFFER SIZE: 128
-OUTPUT:> 	memcpy         :       1805
-OUTPUT:> 	memcpy_fast    :       1845
-OUTPUT:> 	MemCpy32       :       1105
-OUTPUT:> BUFFER SIZE: 1024
-OUTPUT:> 	memcpy         :       6315
-OUTPUT:> 	memcpy_fast    :       3650
-OUTPUT:> 	MemCpy32       :       3905
+These routines take advantage of specific SH4 processor features:
+
+- **Cache Line Optimization**: Functions process memory in 32-byte chunks to match the SH4's cache line size
+- **Prefetch Instructions**: Strategic placement of `pref` instructions exactly one cache line ahead
+- **Write Allocation**: Using `movca.l` to optimize cache line allocation for write operations
+- **Pipeline Utilization**: Careful instruction ordering to maximize the SH4's dual-issue capabilities
+- **Loop Unrolling**: Partial loop unrolling to reduce branch prediction penalties
+
+## 📊 Benchmark Results
+
+Performance comparison in clock cycles (lower is better):
+
+| Buffer Size (bytes) | memcpy | memcpy_fast | **MemCpy32** |
+|---------------------|-------:|------------:|-------------:|
+| 0                   |   1030 |        1100 |        **665** |
+| 32                  |   1435 |         995 |        **805** |
+| 64                  |   1485 |        1725 |        **905** |
+| 96                  |   1645 |        1785 |       **1005** |
+| 128                 |   1805 |        1845 |       **1105** |
+| 1024                |   6315 |        3650 |        3905 |
 
 
 ![Dreamcast Logo](https://raw.githubusercontent.com/dreamcast-scene/resources/main/dreamcast_logo.png)
@@ -67,3 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The Dreamcast development community for their tireless work in keeping the platform alive
 - [KallistiOS](http://gamedev.allusion.net/softprj/kos/) - The open-source Dreamcast development environment
 - Hitachi for the amazing SH4 processor architecture documentation
+- Created by Ian Micheal - 2025
