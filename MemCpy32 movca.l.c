@@ -52,7 +52,7 @@ void MemCpy32(uint32_t *dst, uint32_t *src, size_t size)
             : "memory"
         );
         
-        // Store remaining values - using pointer indexing as in your original
+        // Store remaining values - using pointer indexing
         *(dst+1) = v1;
         *(dst+2) = v2;
         *(dst+3) = v3;
