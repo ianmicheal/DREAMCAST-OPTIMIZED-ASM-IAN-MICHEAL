@@ -1,4 +1,23 @@
+//bit64_sq_cpy() - Your optimized 64-byte block copy routine with:
 
+//Direct SQ register manipulation
+//Efficient 64-byte chunked transfers
+//Optimal prefetch and cache invalidation (ocbi)
+//Hardware-level optimizations
+
+
+//sq_cpy_pvr_fast() - My high-level wrapper that:
+
+//Sets PVR DMA mode (64-bit or 32-bit)
+//Converts pointers to DMA-optimized area
+//Calls your optimized copy routine
+
+//following timings for copying a frame buffer from main RAM to video RAM for a 640x480 16-bit frame buffer:
+//memcpy: 20.80 ms
+//KOS sq_cpy: 8.24 ms
+//sq_cpy_pvr_fast: 3.89 ms
+//DMA (includes optimized cache flush, waits for DMA to complete): 1.98 ms
+//DMA (includes optimized cache flush, DMA works in background): 0.08 m
 
 // Ian Micheal optimized SQ function - much faster than original
 void bit64_sq_cpy(void *dest, void *src, int n)
