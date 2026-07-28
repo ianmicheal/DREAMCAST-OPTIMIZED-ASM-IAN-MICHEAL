@@ -5,6 +5,7 @@
 - **Write Allocation**: Using `movca.l` to optimize cache line allocation for write operations
 - **Pipeline Utilization**: Careful instruction ordering to maximize the SH4's dual-issue capabilities
 - **Loop Unrolling**: Partial loop unrolling to reduce branch prediction penalties
+- Do not use it for P2 uncached addresses, AICA RAM, PVR VRAM, arbitrary unaligned memory, or DMA-visible memory without a later cache writeback.
 
 ## 📊 Benchmark Results
 
